@@ -1,0 +1,12 @@
+name: HeadTrader
+main: com.naturaliscraft.headtrader.HeadTrader
+version: 1.0
+author: Evan Merz (BlendyCat)
+commands:
+  headtrader:
+    description: main command for the head trader plugin
+    usage: /<command> [subcommand] [args]
+    aliases: [ht]
+
+
+

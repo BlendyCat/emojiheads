@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="HeadTrader">
+    <output-path>$PROJECT_DIR$/../../BildTewls/plugins</output-path>
+    <root id="archive" name="HeadTrader.jar">
+      <element id="module-output" name="HeadTraderNoMvn" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>
