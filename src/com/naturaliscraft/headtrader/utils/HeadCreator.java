@@ -41,7 +41,7 @@ class HeadCreator {
             e.printStackTrace();
         }
         meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', title));
-        List<String> lore = new ArrayList<String>();
+        List<String> lore = new ArrayList<>();
         lore.add(ChatColor.DARK_GREEN+"$"+price);
         meta.setLore(lore);
         head.setItemMeta(meta);

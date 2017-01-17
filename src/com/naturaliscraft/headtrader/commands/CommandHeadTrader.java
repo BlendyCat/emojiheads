@@ -21,7 +21,6 @@ public class CommandHeadTrader implements CommandExecutor {
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
-
         //Player exclusive Commands
         if(sender instanceof Player){
             Player player = (Player) sender;

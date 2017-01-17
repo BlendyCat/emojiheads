@@ -43,7 +43,7 @@ public class InventoryListener implements Listener {
         if(descriptor.equals("Category")){
             e.setCancelled(true);
             new HeadsGUI(trader.getConfigManager(),
-                    meta.getDisplayName()).open(player);
+                    meta.getDisplayName(), 0).open(player);
         }
 
         else if(descriptor.equals("Categories")){
@@ -67,6 +67,24 @@ public class InventoryListener implements Listener {
             e.setCancelled(true);
             new CategoriesGUI(trader.getConfigManager()).open(player);
         }
+
+        else if(descriptor.equals(">>>")){
+            e.setCancelled(true);
+            new HeadsGUI(trader.getConfigManager(),
+                    inv.getItem(inv.getSize()-5).getItemMeta().getDisplayName(),
+                    getCurrentPage(inv.getItem(inv.getSize()-5))+1).open(player);
+        }
+
+        else if(descriptor.equals("<<<")){
+            e.setCancelled(true);
+            new HeadsGUI(trader.getConfigManager(),
+                    inv.getItem(inv.getSize()-5).getItemMeta().getDisplayName(),
+                    getCurrentPage(inv.getItem(inv.getSize()-5))-1).open(player);
+
+        }
+
+        else if(descriptor.substring(0,4).equals("Page"))
+            e.setCancelled(true);
     }
 
     /**
@@ -97,5 +115,13 @@ public class InventoryListener implements Listener {
         player.getInventory().addItem(item);
         player.sendMessage(ChatColor.GREEN+"Purchased '"+
                 ChatColor.stripColor(im.getDisplayName())+"' successfully!");
+    }
+
+    private int getCurrentPage(ItemStack head){
+        ItemMeta meta = head.getItemMeta();
+        if(!meta.hasLore()) return 0;
+        String descriptor = ChatColor.stripColor(meta.getLore().get(0)).substring(5);
+        descriptor =  descriptor.substring(0,descriptor.lastIndexOf("/"));
+        return Integer.parseInt(descriptor)-1;
     }
 }

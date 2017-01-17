@@ -7,7 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="craftbukkit-1.11" level="project" />
-    <orderEntry type="library" name="Vault" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="craftbukkit-1.11" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Vault" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Citizens" level="project" />
   </component>
 </module>

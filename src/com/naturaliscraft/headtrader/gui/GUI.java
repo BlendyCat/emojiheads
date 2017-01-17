@@ -14,7 +14,8 @@ public abstract class GUI {
     public abstract void open(Player player);
 
     int getInventorySize(int length){
-        return length + (9 - length % 9);
+        int size =  length + (9 - length % 9);
+        return size >= 45 ? 54 : size;
     }
 
 }
